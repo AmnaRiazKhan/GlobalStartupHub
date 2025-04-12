@@ -2,18 +2,36 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 
-// Super simple test component for debugging
+// Super minimal App component with very obvious styling
 function App() {
   console.log("App component rendering");
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="p-8 min-h-screen bg-blue-50">
-        <h1 className="text-4xl font-bold text-blue-600 mb-6">VentureVisa</h1>
-        <p className="text-xl">If you can see this, the React app is rendering properly.</p>
-        <div className="mt-8 p-6 bg-white rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4">Diagnostic Information</h2>
-          <p>This is a simplified test page to verify React rendering.</p>
-          <p className="mt-2">Once this is working, we can restore the full application.</p>
+      <div style={{
+        backgroundColor: '#ff0000', // Bright red
+        color: '#ffffff',
+        padding: '40px',
+        margin: '40px',
+        borderRadius: '16px',
+        boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+        fontSize: '24px',
+        fontWeight: 'bold',
+        textAlign: 'center',
+      }}>
+        <h1 style={{ 
+          fontSize: '48px', 
+          marginBottom: '30px',
+          color: 'yellow',
+        }}>WEBVIEW TEST</h1>
+        <p>If you can see this BRIGHT RED box with YELLOW text, React is rendering properly in the webview!</p>
+        <div style={{
+          marginTop: '30px',
+          backgroundColor: '#ffffff',
+          color: '#000000',
+          padding: '20px',
+          borderRadius: '8px',
+        }}>
+          <p>Timestamp: {new Date().toLocaleTimeString()}</p>
         </div>
       </div>
       <Toaster />

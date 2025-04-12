@@ -1,39 +1,40 @@
+import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
+import NotFound from "@/pages/not-found";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Funding from "./pages/Funding";
+import Immigration from "./pages/Immigration";
+import Visas from "./pages/Visas";
+import Programs from "./pages/Programs";
+import Community from "./pages/Community";
+import Contact from "./pages/Contact";
 
-// Super minimal App component with very obvious styling
+// Router component
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/funding" component={Funding} />
+      <Route path="/immigration" component={Immigration} />
+      <Route path="/visas" component={Visas} />
+      <Route path="/programs" component={Programs} />
+      <Route path="/community" component={Community} />
+      <Route path="/contact" component={Contact} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
+// Main App component
 function App() {
   console.log("App component rendering");
   return (
     <QueryClientProvider client={queryClient}>
-      <div style={{
-        backgroundColor: '#ff0000', // Bright red
-        color: '#ffffff',
-        padding: '40px',
-        margin: '40px',
-        borderRadius: '16px',
-        boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
-        fontSize: '24px',
-        fontWeight: 'bold',
-        textAlign: 'center',
-      }}>
-        <h1 style={{ 
-          fontSize: '48px', 
-          marginBottom: '30px',
-          color: 'yellow',
-        }}>WEBVIEW TEST</h1>
-        <p>If you can see this BRIGHT RED box with YELLOW text, React is rendering properly in the webview!</p>
-        <div style={{
-          marginTop: '30px',
-          backgroundColor: '#ffffff',
-          color: '#000000',
-          padding: '20px',
-          borderRadius: '8px',
-        }}>
-          <p>Timestamp: {new Date().toLocaleTimeString()}</p>
-        </div>
-      </div>
+      <Router />
       <Toaster />
     </QueryClientProvider>
   );

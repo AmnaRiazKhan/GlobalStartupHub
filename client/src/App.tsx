@@ -13,10 +13,24 @@ import Programs from "./pages/Programs";
 import Community from "./pages/Community";
 import Contact from "./pages/Contact";
 
+// Simple test component to debug rendering
+const TestHome = () => {
+  return (
+    <div className="p-8">
+      <h1 className="text-3xl font-bold text-blue-600">VentureVisa - Test Page</h1>
+      <p className="mt-4 text-lg">If you can see this, the React app is loading correctly.</p>
+      <div className="mt-6 p-4 bg-blue-100 rounded-lg">
+        <p>This is a temporary test page to check rendering.</p>
+      </div>
+    </div>
+  );
+};
+
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={TestHome} />
+      <Route path="/home" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/funding" component={Funding} />
       <Route path="/immigration" component={Immigration} />
@@ -30,11 +44,12 @@ function Router() {
 }
 
 function App() {
+  console.log("App component rendering");
   return (
     <QueryClientProvider client={queryClient}>
-      <MainLayout>
+      <div>
         <Router />
-      </MainLayout>
+      </div>
       <Toaster />
     </QueryClientProvider>
   );

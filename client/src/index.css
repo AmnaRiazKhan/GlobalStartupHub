@@ -9,21 +9,5 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background-color: #f0f4ff !important; /* Bright blue background */
-    min-height: 100vh !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  #root {
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 20px !important;
   }
 }

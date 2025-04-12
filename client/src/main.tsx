@@ -2,17 +2,16 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-// Wait for DOM to be fully loaded
-document.addEventListener("DOMContentLoaded", () => {
-  const rootElement = document.getElementById("root");
-  
-  if (!rootElement) {
-    console.error("Root element not found!");
-    return;
-  }
-  
+// Get the root element
+const rootElement = document.getElementById("root");
+
+// Check if it exists
+if (!rootElement) {
+  console.error("Root element not found!");
+} else {
+  console.log("Root element found, rendering React app");
+  // Create root and render
   const root = createRoot(rootElement);
   root.render(<App />);
-  
   console.log("React application rendered successfully");
-});
+}

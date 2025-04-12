@@ -1,42 +1,46 @@
-import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
-import NotFound from "@/pages/not-found";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Funding from "./pages/Funding";
-import Immigration from "./pages/Immigration";
-import Visas from "./pages/Visas";
-import Programs from "./pages/Programs";
-import Community from "./pages/Community";
-import Contact from "./pages/Contact";
 
-// Router component
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/funding" component={Funding} />
-      <Route path="/immigration" component={Immigration} />
-      <Route path="/visas" component={Visas} />
-      <Route path="/programs" component={Programs} />
-      <Route path="/community" component={Community} />
-      <Route path="/contact" component={Contact} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
-
-// Main App component
+// Super minimal App component with visible styles
 function App() {
   console.log("App component rendering");
+  
   return (
-    <QueryClientProvider client={queryClient}>
-      <Router />
-      <Toaster />
-    </QueryClientProvider>
+    <div style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '100vh',
+      backgroundColor: 'purple',
+      color: 'white',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 9999,
+      fontSize: '24px',
+      fontWeight: 'bold',
+      padding: '20px',
+      boxSizing: 'border-box',
+      overflow: 'auto'
+    }}>
+      <h1 style={{fontSize: '40px', color: 'yellow'}}>WEBVIEW TEST PAGE</h1>
+      <p>This should be visible in the webview tab</p>
+      <div style={{
+        margin: '20px',
+        padding: '20px',
+        backgroundColor: 'white',
+        color: 'black',
+        borderRadius: '10px',
+        maxWidth: '600px',
+        textAlign: 'center'
+      }}>
+        <p>Current time: {new Date().toLocaleTimeString()}</p>
+        <p>If you see this purple background with white text, the React app is working in webview</p>
+      </div>
+    </div>
   );
 }
 

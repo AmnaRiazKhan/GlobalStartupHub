@@ -34,7 +34,7 @@ const HeroSection = () => {
             <div className="relative bg-white p-6 rounded-2xl shadow-xl">
               <div className="aspect-video mb-6 bg-neutral-100 rounded-lg overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80" 
+                  src="https://plus.unsplash.com/premium_photo-1663127104392-609b4c06699b?q=80&w=1518&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Diverse team of entrepreneurs working together" 
                   className="object-cover w-full h-full"
                 />

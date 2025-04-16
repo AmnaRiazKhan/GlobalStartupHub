@@ -12,6 +12,7 @@ import Visas from "./pages/Visas";
 import Programs from "./pages/Programs";
 import Community from "./pages/Community";
 import Contact from "./pages/Contact";
+import Demo from "./pages/Demo";
 
 function Router() {
   return (
